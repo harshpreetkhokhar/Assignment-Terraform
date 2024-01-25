@@ -22,7 +22,7 @@ resource "local_file" "all-user" {
 
 
 resource "local_file" "file3" {
-  filename="${path.module}/../../folder3/file1.txt"
+  filename="${path.module}/../f2/folder3/file1.txt"
   content =<<-EOT
   OWNER DETAILS
   "\n"
