@@ -19,15 +19,16 @@ all-user=[
     user-type = "temporary"
     phone_number=9436242778
  },
- {name="karan"
-localite = true
-user-type = "permanent"
-phone_number=9436242778
+ {
+   name="karan"
+   localite = true
+   user-type = "permanent"
+    phone_number=9436242778
  }
 ]
 
 
-owner = {
+   owner = {
   "name"="harman",
   "age"="45",
   "phone-number"="538252332"

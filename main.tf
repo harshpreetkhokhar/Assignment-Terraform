@@ -1,11 +1,11 @@
 resource "local_file" "current_user" {
   filename = "${path.module}/current-user.txt"
   content =<<-EOT
-  current user name: ${var.current_user},
-  current user id: ${random_id.current_user-id[0].hex},
-  current user password:${sensitive(random_password.current-user-password.result)},
-  current user type:${var.user-type},
-  Is current user a localite?:${var.local-residence},
+  current user name: ${var.current_user}
+  current user id: ${random_id.current_user-id[0].hex}
+  current user password:${sensitive(random_password.current-user-password.result)}
+  current user type:${var.user-type}
+  Is current user a localite?:${var.local-residence}
   phone number :${var.phone_number}
   EOT
 }
@@ -21,15 +21,16 @@ resource "local_file" "all-user" {
 }
 
 
+
 resource "local_file" "file3" {
   filename="${path.module}/../f2/folder3/file1.txt"
   content =<<-EOT
   OWNER DETAILS
-  "\n"
+  
   ${join("\n",["name: ${var.owner.name},age: ${var.owner.age}, phone_number:${var.owner.phone-number}, location:${var.owner.location}"])}
-   "\n"
+  -------------------
    INVESTOR DETAILS 
-   "\n"
+  -------------------
   ${join("\n",[for i in var.investor:" investor: ${i}"])}
    EOT  
   }
@@ -37,7 +38,7 @@ resource "local_file" "file3" {
 
 
 resource "random_id" "current_user-id" {
-   count = length(var.all-user)+local.increment
+  count = length(var.all-user)+local.increment
   byte_length =local.byte_length
 }
 
