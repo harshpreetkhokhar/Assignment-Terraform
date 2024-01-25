@@ -1,0 +1,6 @@
+current user name: harsh,
+current user id: 0434,
+current user password:R#?$CVX5D-,
+current user type:permanent,
+Is current user a localite?:true,
+phone number :97435746733
